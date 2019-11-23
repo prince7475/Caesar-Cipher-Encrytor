@@ -1,0 +1,30 @@
+sample input: "xyz", 2 
+sample output: "zab"
+
+time --> O(n * l)
+space --> O(n)
+function caesarCipherEncryptor(string,key){
+  let result = []
+  for(let i = 0; i < string.length; i++){
+    result[i] = cipherHelper(string[i], key)
+  }
+  
+  return result.join("")
+}
+
+
+ 
+ 
+ function cipherHelper(letter,key){
+ let strArr =  "abcdefghijklmnopqrstuvwxyz".split("")
+  let idxOfCurr = strArr.indexOf(letter)
+  let nextIdx = idxOfCurr + key
+  let resultIdx = (nextIdx % 26)
+  return strArr[resultIdx]
+ }
+ 
+ 
+-- loop through given string
+    Each Letter
+      result[i] = Cipherhelper(letter, key)
+ return result.join("")
